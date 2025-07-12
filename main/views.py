@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('<H4>Test 2</H4>')
+
+def about(request):
+    return HttpResponse('<H4>Текст страницы about</H4>')
