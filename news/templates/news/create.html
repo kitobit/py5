@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по добавлению статьи{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Форма по добавлению статьи</h1>
+    <form method="post" action="postuser/">
+        {% csrf_token %}
+        <input type="text" placeholder="Название статьи" class="form-control" name="title"><br>
+        <input type="text" placeholder="Описание статьи" class="form-control" name="anonse"><br>
+        <textarea placeholder="Текст статьи" class="form-control" name="full_text"></textarea><br>
+        <input type="date" class="form-control" name="date"><br>
+        <button class="btn btn-success" type="submit">Добавить</button>
+    </form>
+</div>
+
+{% endblock %}
