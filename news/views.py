@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import generics
+
 from .models import Articles
 from .forms import ArticlesForm
 from datetime import date
 from django.http import HttpResponse
 from django.views.generic import DetailView, UpdateView, DeleteView
+
+from .serializers import ArticlesSerializer
 
 def create(request):
 
@@ -54,3 +59,7 @@ class NewsDeleteView(DeleteView):
     model = Articles
     success_url = '/news/'
     template_name = 'news/news-delete.html'
+
+class ArticlesApiView(generics.ListAPIView):
+    queryset = Articles.objects.all()
+    serializer_class = ArticlesSerializer

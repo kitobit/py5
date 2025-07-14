@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['kitobit.pythonanywhere.com','127.0.0.1']
 INSTALLED_APPS = [
     'main',
     'news',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,3 +128,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/home/kitobit/py5/main/static/'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
