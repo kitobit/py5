@@ -11,4 +11,5 @@ urlpatterns = [
     path("<int:pk>/update", views.NewsUpdateView.as_view() , name="news-update"),
     path("<int:pk>/delete", views.NewsDeleteView.as_view() , name="news-delete"),
     path("api/cat/", views.ArticlesApiView.as_view(), name="news-api"),
+    path("numpy_nn/", views.numpy_nn, name="numpy_nn"),
 ]
